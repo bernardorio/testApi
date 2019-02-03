@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>au.com.autogeneral</groupId>
-	<artifactId>testAPI</artifactId>
+	<artifactId>AutoGeneralTestAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>testAPI</name>
+	<name>AutoGeneralTestAPI</name>
 	<description>TestApi Spring Boot Application for Auto and General</description>
 
 	<properties>
