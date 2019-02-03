@@ -1,17 +1,17 @@
 Auto&General Test API Exercise
 ==============================
 
-This project was an implementation of the Swagger documented API provided 
+Built as an exercise, this API should mimic the behaviour of the TestExercise API built by Auto&General, and exposed via its SwaggerUI interface
 
 ## Requirements
 
 - If you are running it locally, you need the following installed:
     Java - 1.8+, Maven 3+.
-- If you decide to use the dockerised version, all you need is Docker installed and running
+- If you decide to use the 'dockerised' version, all you need is Docker installed and running
 
 ## Considerations:
 
-- Since I believe this was the purpose of the exercise, I kept it simple (ie. didn't add any unnecessary feature, such as secure endpoints, actuator, etc); 
+- No extra-ordinary feature (such as security, actuactor, etc)
 - In memory database was used.
 
 ## Running it:
@@ -35,3 +35,11 @@ Alternatively, the following command will build a snapshot, build a docker image
 http://localhost:8080/swagger-ui.html
 ```
 
+# Endpoints
+
+There are 2 resources available, /todo and /task. 
+  
+  - /todo resource implements the GET, POST and PATCH verbs
+  - /task resource is comprised by a single endpoint that validates a sequence of brackets, eg '{[]}' being valid, and '{[}]' not.
+  
+For more information, and the Model accepted by the endpoints, please refer to the Swagger api, exposed on /swagger-ui.html
