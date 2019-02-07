@@ -9,7 +9,11 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import javax.annotation.PostConstruct;
+
 import static com.google.common.base.Predicates.not;
+import static java.util.TimeZone.getTimeZone;
+import static java.util.TimeZone.setDefault;
 import static org.modelmapper.Conditions.isNotNull;
 import static springfox.documentation.builders.PathSelectors.regex;
 import static springfox.documentation.spi.DocumentationType.SWAGGER_2;
@@ -39,5 +43,10 @@ public class Config {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setPropertyCondition(isNotNull());
         return modelMapper;
+    }
+
+    @PostConstruct
+    void started() {
+        setDefault(getTimeZone("Zulu"));
     }
 }
