@@ -8,6 +8,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -24,10 +30,10 @@ public class TodoItem {
     @ApiModelProperty(dataType="string", example="Uulwi ifis halahs gag erh'ongg w'ssh.")
     private String text;
 
-    @CreationTimestamp
     @Column(updatable = false)
-    @ApiModelProperty(dataType="org.joda.time.LocalDate", example="2017-10-13T01:50:58.735Z")
-    private Date createdAt;
+    @CreationTimestamp
+    @ApiModelProperty(dataType="string", example="2017-10-13T01:50:58.735Z")
+    private ZonedDateTime createdAt;
 
     @ApiModelProperty(dataType="boolean", example="false")
     private boolean isCompleted;
@@ -59,7 +65,7 @@ public class TodoItem {
         return isCompleted;
     }
 
-    public Date getCreatedAt() {
+    public ZonedDateTime getCreatedAt() {
         return createdAt;
     }
 
